@@ -163,7 +163,6 @@
 .navbar-brand {
   float: left;
   padding: @navbar-padding-vertical @navbar-padding-horizontal;
-  // padding: 22px 30px 0 15px;
   font-size: @font-size-large;
   line-height: @line-height-computed;
   height: @navbar-height;
@@ -414,8 +413,14 @@
     > li > a {
       color: @navbar-default-link-color;
 
+      .icon { // added rule set
+          color: @gray-light;
+      }
+
       &:hover,
-      &:focus {
+      &:focus,
+      &:hover .icon, // added selector
+      &:focus .icon { // added selector
         color: @navbar-default-link-hover-color;
         background-color: @navbar-default-link-hover-bg;
       }
@@ -423,7 +428,10 @@
     > .active > a {
       &,
       &:hover,
-      &:focus {
+      &:focus,
+      .icon, // added selector
+      &:hover .icon, // added selector
+      &:focus .icon { // added selector
         color: @navbar-default-link-active-color;
         background-color: @navbar-default-link-active-bg;
       }
