@@ -1,1 +1,0 @@
-Mazey's localhost.
