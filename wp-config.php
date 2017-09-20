@@ -1,16 +1,16 @@
 <?php
 /**
- * WordPress鍩虹閰嶇疆鏂囦欢銆�
+ * WordPress基础配置文件。
  *
- * 杩欎釜鏂囦欢琚畨瑁呯▼搴忕敤浜庤嚜鍔ㄧ敓鎴恮p-config.php閰嶇疆鏂囦欢锛�
- * 鎮ㄥ彲浠ヤ笉浣跨敤缃戠珯锛屾偍闇�瑕佹墜鍔ㄥ鍒惰繖涓枃浠讹紝
- * 骞堕噸鍛藉悕涓衡�渨p-config.php鈥濓紝鐒跺悗濉叆鐩稿叧淇℃伅銆�
+ * 这个文件被安装程序用于自动生成wp-config.php配置文件，
+ * 您可以不使用网站，您需要手动复制这个文件，
+ * 并重命名为“wp-config.php”，然后填入相关信息。
  *
- * 鏈枃浠跺寘鍚互涓嬮厤缃�夐」锛�
+ * 本文件包含以下配置选项：
  *
- * * MySQL璁剧疆
- * * 瀵嗛挜
- * * 鏁版嵁搴撹〃鍚嶅墠缂�
+ * * MySQL设置
+ * * 密钥
+ * * 数据库表名前缀
  * * ABSPATH
  *
  * @link https://codex.wordpress.org/zh-cn:%E7%BC%96%E8%BE%91_wp-config.php
@@ -18,32 +18,32 @@
  * @package WordPress
  */
 
-// ** MySQL 璁剧疆 - 鍏蜂綋淇℃伅鏉ヨ嚜鎮ㄦ鍦ㄤ娇鐢ㄧ殑涓绘満 ** //
-/** WordPress鏁版嵁搴撶殑鍚嶇О */
+// ** MySQL 设置 - 具体信息来自您正在使用的主机 ** //
+/** WordPress数据库的名称 */
 define('DB_NAME', 'zhibaifa');
 
-/** MySQL鏁版嵁搴撶敤鎴峰悕 */
+/** MySQL数据库用户名 */
 define('DB_USER', 'root');
 
-/** MySQL鏁版嵁搴撳瘑鐮� */
+/** MySQL数据库密码 */
 define('DB_PASSWORD', 'root');
 
-/** MySQL涓绘満 */
+/** MySQL主机 */
 define('DB_HOST', 'localhost');
 
-/** 鍒涘缓鏁版嵁琛ㄦ椂榛樿鐨勬枃瀛楃紪鐮� */
+/** 创建数据表时默认的文字编码 */
 define('DB_CHARSET', 'utf8');
 
-/** 鏁版嵁搴撴暣鐞嗙被鍨嬨�傚涓嶇‘瀹氳鍕挎洿鏀� */
+/** 数据库整理类型。如不确定请勿更改 */
 define('DB_COLLATE', '');
 
 /**#@+
- * 韬唤璁よ瘉瀵嗛挜涓庣洂銆�
+ * 身份认证密钥与盐。
  *
- * 淇敼涓轰换鎰忕嫭涓�鏃犱簩鐨勫瓧涓诧紒
- * 鎴栬�呯洿鎺ヨ闂畕@link https://api.wordpress.org/secret-key/1.1/salt/
- * WordPress.org瀵嗛挜鐢熸垚鏈嶅姟}
- * 浠讳綍淇敼閮戒細瀵艰嚧鎵�鏈塩ookies澶辨晥锛屾墍鏈夌敤鎴峰皢蹇呴』閲嶆柊鐧诲綍銆�
+ * 修改为任意独一无二的字串！
+ * 或者直接访问{@link https://api.wordpress.org/secret-key/1.1/salt/
+ * WordPress.org密钥生成服务}
+ * 任何修改都会导致所有cookies失效，所有用户将必须重新登录。
  *
  * @since 2.6.0
  */
@@ -59,38 +59,38 @@ define('NONCE_SALT',       '^$w9!FY<Zw=Q,r~z*#9V26b!arIp<B[1$4A51-hFVFYhtW56Q Y(
 /**#@-*/
 
 /**
- * WordPress鏁版嵁琛ㄥ墠缂�銆�
+ * WordPress数据表前缀。
  *
- * 濡傛灉鎮ㄦ湁鍦ㄥ悓涓�鏁版嵁搴撳唴瀹夎澶氫釜WordPress鐨勯渶姹傦紝璇蜂负姣忎釜WordPress璁剧疆
- * 涓嶅悓鐨勬暟鎹〃鍓嶇紑銆傚墠缂�鍚嶅彧鑳戒负鏁板瓧銆佸瓧姣嶅姞涓嬪垝绾裤��
+ * 如果您有在同一数据库内安装多个WordPress的需求，请为每个WordPress设置
+ * 不同的数据表前缀。前缀名只能为数字、字母加下划线。
  */
 $table_prefix  = 'zhibaifa_';
 
 /**
- * 寮�鍙戣�呬笓鐢細WordPress璋冭瘯妯″紡銆�
+ * 开发者专用：WordPress调试模式。
  *
- * 灏嗚繖涓�兼敼涓簍rue锛學ordPress灏嗘樉绀烘墍鏈夌敤浜庡紑鍙戠殑鎻愮ず銆�
- * 寮虹儓寤鸿鎻掍欢寮�鍙戣�呭湪寮�鍙戠幆澧冧腑鍚敤WP_DEBUG銆�
+ * 将这个值改为true，WordPress将显示所有用于开发的提示。
+ * 强烈建议插件开发者在开发环境中启用WP_DEBUG。
  *
- * 瑕佽幏鍙栧叾浠栬兘鐢ㄤ簬璋冭瘯鐨勪俊鎭紝璇疯闂瓹odex銆�
+ * 要获取其他能用于调试的信息，请访问Codex。
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', false);
 
 /**
- * zh_CN鏈湴鍖栬缃細鍚敤ICP澶囨鍙锋樉绀�
+ * zh_CN本地化设置：启用ICP备案号显示
  *
- * 鍙湪璁剧疆鈫掑父瑙勪腑淇敼銆�
- * 濡傞渶绂佺敤锛岃绉婚櫎鎴栨敞閲婃帀鏈銆�
+ * 可在设置→常规中修改。
+ * 如需禁用，请移除或注释掉本行。
  */
 define('WP_ZH_CN_ICP_NUM', true);
 
-/* 濂戒簡锛佽涓嶈鍐嶇户缁紪杈戙�傝淇濆瓨鏈枃浠躲�備娇鐢ㄦ剦蹇紒 */
+/* 好了！请不要再继续编辑。请保存本文件。使用愉快！ */
 
-/** WordPress鐩綍鐨勭粷瀵硅矾寰勩�� */
+/** WordPress目录的绝对路径。 */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
-/** 璁剧疆WordPress鍙橀噺鍜屽寘鍚枃浠躲�� */
+/** 设置WordPress变量和包含文件。 */
 require_once(ABSPATH . 'wp-settings.php');

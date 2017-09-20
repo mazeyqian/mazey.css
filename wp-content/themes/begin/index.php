@@ -8,6 +8,7 @@
     <?php wp_head(); ?>
 </head>
 <body>
+    <!-- 标题 -->
     <div id="header">
         <div id="headerimg">
             <h1>
@@ -25,7 +26,7 @@
             <p>访问量：<?php echo $view; ?></p>
         </div>
     </div>
-
+    <!-- 日志列表 -->
     <div id="home-loop">
         <?php
             global $post;
@@ -58,6 +59,7 @@
     <div><?php posts_nav_link(); ?></div>
 
 
+    <?php get_sidebar(); ?>
 
     <?php wp_footer(); ?>
 </body>
