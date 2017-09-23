@@ -7,6 +7,7 @@
             get_template_part('container', 'page');
         ?>
     </div>
+    <?php comments_template(); ?>
 
     <?php get_sidebar(); ?>
     <?php get_footer(); ?>
