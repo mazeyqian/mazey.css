@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=<?php bloginfo('charset'); ?>" />
-    <title><?php bloginfo('name'); ?></title>
+    <title><?php
+        $title = '未知';
+        if(is_home()) {
+            $title = get_bloginfo('name');
+        } else {
+            $title = wp_title('', false) . ' - ' . get_bloginfo('name');
+        }
+        if($paged > 0 ) {
+            $title .= " - 第{$paged}页";
+        }
+        echo $title;
+    ?></title>
     <meta name="description" content="<?php bloginfo('description'); ?>" />
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
 
@@ -24,5 +35,6 @@
                 update_option('view', $view + 1);
             ?>
             <p>访问量：<?php echo $view; ?></p>
+            <p><ul><?php wp_nav_menu(array('menu' => 'home')); ?></ul></p>
         </div>
     </div>
