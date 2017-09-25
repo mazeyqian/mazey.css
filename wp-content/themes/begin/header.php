@@ -38,3 +38,28 @@
             <p><ul><?php wp_nav_menu(array('menu' => 'home')); ?></ul></p>
         </div>
     </div>
+<?php if(!is_home()){ ?>
+    <ul>
+        <li><a href="<?php bloginfo('url');?>">首页</a></li>
+        <li><?php
+            if (is_category()) {
+                single_cat_title();
+            } elseif (is_search()) {
+                echo $s;
+            } elseif (is_single()) {
+                $cat = get_the_category();
+                $cat = $cat[0];
+                echo '<a href="' . get_category_link($cat) . '">' . $cat->name . '</a>';
+            } elseif (is_page()) {
+                the_title();
+            } elseif (is_404()) {
+                echo '404';
+            } else {
+                echo 'Unknown';
+            }
+        ?></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+    </ul>
+<?php } ?>
