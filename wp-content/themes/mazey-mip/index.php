@@ -4,13 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
         <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v1/mip.css">
-        <link rel="canonical" href="<?php the_permalink(); ?>">
-        <title><?php echo get_bloginfo('description') . ' - ' . get_bloginfo('name'); ?></title>
+        <link rel="canonical" href="<?php $Object_MIP->print_current_url(); ?>">
+        <title><?php $Object_Show->print_page_title(); ?></title>
         <style mip-custom>
             <?php require_once(dirname(__FILE__) . '/css/main.css.php'); ?>
         </style>
     </head>
     <body>
+        <!--div>页码：<?php echo $Object_Show->current_page; ?></div-->
         <header role="banner">
             <!--导航-->
             <nav class="navbar navbar-static-top navbar-default">
