@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
         <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v1/mip.css">
+        <link rel="canonical" href="<?php the_permalink(); ?>">
         <title><?php echo get_bloginfo('description') . ' - ' . get_bloginfo('name'); ?></title>
         <style mip-custom>
             <?php require_once(dirname(__FILE__) . '/css/main.css.php'); ?>
@@ -27,29 +28,8 @@
         </header>
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
-                    <?php
-                        if(have_posts()) {
-                            while(have_posts()) {
-                                the_post();
-                    ?>
-                    <div>
-                        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                        <p><?php the_content(); ?></p>
-                    </div>
-                    <?php
-                            }
-                        } else {
-                            echo "There is no post to show!";
-                        }
-                    ?>
-                    <div>
-                        <p><?php posts_nav_link(); ?></p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <h2 class="text-center">侧边栏</h2>
-                </div>
+                <?php get_template_part('container'); ?>
+                <?php get_sidebar(); ?>
             </div>
         </div>
         <script src="https://mipcache.bdstatic.com/static/v1/mip.js"></script>
