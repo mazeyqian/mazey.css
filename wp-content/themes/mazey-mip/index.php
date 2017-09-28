@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v1/mip.css">
+        <link rel="stylesheet" type="text/css" href="/static/v1/mip.css">
         <link rel="canonical" href="<?php $Object_MIP->print_current_url(); ?>">
         <title><?php $Object_Show->print_page_title(); ?></title>
         <style mip-custom>
@@ -33,6 +33,6 @@
                 <?php get_sidebar(); ?>
             </div>
         </div>
-        <script src="https://mipcache.bdstatic.com/static/v1/mip.js"></script>
+        <script src="/static/v1/mip.js"></script>
     </body>
 </html>
