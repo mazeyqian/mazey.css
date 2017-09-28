@@ -20,11 +20,10 @@
                             echo "There is no post to show!";
                         }
                     ?>
-                    <div>
-                        <p><?php posts_nav_link(); ?></p>
-                        <p><?php the_posts_pagination(array(
+                    <div class="post-pagination text-center">
+                        <?php the_posts_pagination(array(
                             'prev_text' => '上一页',
                             'next_text' => '下一页'
-                        )); ?></p>
+                        )); ?>
                     </div>
                 </div>

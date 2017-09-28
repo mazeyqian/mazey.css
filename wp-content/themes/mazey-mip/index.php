@@ -12,7 +12,7 @@
     </head>
     <body>
         <!--div>页码：<?php echo $Object_Show->current_page; ?></div-->
-        <header role="banner">
+        <header>
             <!--导航-->
             <nav class="navbar navbar-static-top navbar-default">
                 <div class="container">
@@ -33,6 +33,11 @@
                 <?php get_sidebar(); ?>
             </div>
         </div>
+        <footer class="post-footer">
+            <div>
+                <p class="text-center">Copyright © 2017 <?php bloginfo('name'); ?> - <?php bloginfo('description'); ?></p>
+            </div>
+        </footer>
         <script src="/static/v1/mip.js"></script>
     </body>
 </html>
