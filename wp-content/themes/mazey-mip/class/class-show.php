@@ -4,7 +4,7 @@ class Class_Show {
     public $current_page = 0;
     /* 判断页面标题 */
     private function return_page_title() {
-        $title = '未知';
+        $title = 'unknown';
         $this->current_page = get_query_var('paged');
         /* 是否主页 */
         if(is_home()) {
@@ -22,4 +22,18 @@ class Class_Show {
     public function print_page_title() {
         echo $this->return_page_title();
     }
+
+    /* 文章标签 */
+    /* private function return_post_detail() {
+        $detail = 'unknown';
+        $detail = '时间：' . the_date('Y年m月d日', '', '', false);
+        $detail .= ' - 作者：' . get_the_author();
+        $detail .= ' - 分类：' . get_the_category();
+        return $detail;
+    }
+    public function print_post_detail() {
+        echo $this->return_post_detail();
+
+
+    } */
 }
