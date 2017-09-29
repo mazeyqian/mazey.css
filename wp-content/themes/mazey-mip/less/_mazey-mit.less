@@ -1,9 +1,7 @@
 @mazey-mip-solid-color: rgb(174, 174, 174);
 
 .post-index{
-	border-bottom-width: 1px;
-	border-bottom-color: @mazey-mip-solid-color;
-	border-bottom-style: solid;
+	.border-bottom(1px);
 	padding: 14px 0;
 }
 
@@ -23,10 +21,19 @@
     padding-top: 14px; 
 }
 
-.post-sidebar>h3{
-    border-bottom-width: 2px;
+.border-bottom(@width:1px){
+    border-bottom-width: @width;
     border-bottom-color: @mazey-mip-solid-color;
     border-bottom-style: solid;
+}
+
+.post-may-like{
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.post-sidebar>h3,.post-may-like>span{
+    .border-bottom(2px);
     padding: 0 0 3px 0;
     display: inline-block;
 }
@@ -73,12 +80,3 @@
 .post-search>mip-form{
     .form-inline;
 }
-
-//.post-search input[type=text]{
-//  .form-control;
-//}
-//
-//.post-search button[type=submit]{
-//  .btn;
-//  .btn-default;
-//}
