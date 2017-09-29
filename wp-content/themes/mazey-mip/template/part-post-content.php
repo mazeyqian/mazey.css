@@ -1,4 +1,3 @@
-                <div class="col-md-8">
                     <?php
                         if(have_posts()) {
                             while(have_posts()) {
@@ -27,10 +26,3 @@
                             echo "There is no post to show!";
                         }
                     ?>
-                    <div class="post-pagination text-center">
-                        <?php the_posts_pagination(array(
-                            'prev_text' => '上一页',
-                            'next_text' => '下一页'
-                        )); ?>
-                    </div>
-                </div>
