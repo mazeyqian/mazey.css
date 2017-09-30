@@ -19,6 +19,7 @@
                                 /* 当前标签 */
                                 //var_dump(get_the_tags());
                                 $listThisTags = get_the_tags();
+                                /* 判断是否存在标签 */
                                 if($listThisTags):
                                     $listThisTagsID = array();
                                     $listThisTagsName = array();
