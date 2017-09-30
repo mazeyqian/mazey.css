@@ -28,6 +28,9 @@
                             <p>
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
                             </p>
+                            <p class="post-single-time">
+                                <?php the_time('Y年m月d日');?>
+                            </p>
                         </div>
                         <?php endforeach;?>
                     </div>

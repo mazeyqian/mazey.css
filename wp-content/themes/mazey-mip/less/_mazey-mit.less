@@ -1,8 +1,18 @@
 @mazey-mip-solid-color: rgb(174, 174, 174);
+@mazey-mip-font-color-light: rgb(130, 130, 130);
+
+.post-detail{
+    color:@mazey-mip-font-color-light;
+    font-size: 12px;
+}
 
 .post-index{
 	.border-bottom(1px);
 	padding: 14px 0;
+	
+	&>header>p.post-index-detail{
+	   .post-detail;
+	}
 }
 
 .post-page{
@@ -30,6 +40,14 @@
 .post-may-like{
     padding-top: 14px;
     padding-bottom: 14px;
+    
+    &~div>p:first-child{
+        margin-bottom: 2px;
+    }
+    
+    &~div>p.post-single-time{
+        .post-detail;
+    }
 }
 
 .post-sidebar>h3,.post-may-like>span{
