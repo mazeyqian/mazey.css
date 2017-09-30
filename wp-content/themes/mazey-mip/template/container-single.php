@@ -5,6 +5,9 @@
                             <span>你也许会喜欢</span>
                         </div>
                         <?php
+                            //var_dump(get_the_ID());
+                            $listExclude = array();
+                            $listExclude[] = get_the_ID();
                             $arr_the_category = get_the_category();
                             $category_list_arr = array();
                             foreach($arr_the_category as $value_the_category):
@@ -14,7 +17,8 @@
                             $get_posts_arr = array(
                                 'numberposts' => 3,
                                 'category' => $category_list_str,
-                                'orderby' => 'rand'
+                                'orderby' => 'rand',
+                                'exclude' => $listExclude
                             );
                             $posts_random = get_posts($get_posts_arr);
                             foreach($posts_random as $post):
