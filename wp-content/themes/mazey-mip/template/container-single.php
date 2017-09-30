@@ -5,9 +5,10 @@
                             <span>你也许会喜欢</span>
                         </div>
                         <?php
-                            //var_dump(get_the_ID());
+                            /* 当前文章ID */
                             $listExclude = array();
                             $listExclude[] = get_the_ID();
+                            /* 当前分类 */
                             $arr_the_category = get_the_category();
                             $category_list_arr = array();
                             foreach($arr_the_category as $value_the_category):
