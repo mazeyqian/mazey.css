@@ -30,5 +30,5 @@ require_once(dirname(__FILE__) . '/class/class-load.php');
                 </div>
             </nav>
         </header>
-        <div class="container">
+        <div class="container post-main">
             <div class="row">
