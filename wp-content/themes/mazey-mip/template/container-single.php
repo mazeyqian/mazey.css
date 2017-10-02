@@ -7,8 +7,13 @@
                         <?php
                             /* 当前文章ID */
                             $listExclude = array();
-                            /* TODO: Judge the exist of the id, it may return false. */
-                            $listExclude[] = get_the_ID();
+                            /* DONE: Judge the exist of the id, it may return false. */
+                            $thisID = get_the_ID();
+                            if($thisID != false):
+                                $listExclude[] = get_the_ID();
+                            else:
+                                $listExclude[] = '';
+                            endif;
                             /* 当前分类 */
                             $arr_the_category = get_the_category();
                             $category_list_arr = array();
