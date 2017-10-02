@@ -22,14 +22,14 @@ require_once(dirname(__FILE__) . '/class/class-load.php');
                         <a class="navbar-brand" href="<?php bloginfo('url'); ?>"><mip-img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="治白发网" ></a>
                     </div>
                     <?php
-                    wp_nav_menu(array(
+                    echo str_replace('current-menu-item', 'active current-menu-item', wp_nav_menu(array(
                         'menu' => '',
                         'container' => '',
                         'container_class' => '',
                         'container_id' => '',
                         'menu_class' => 'nav navbar-nav hidden-xs',
                         'menu_id' => '',
-            	        'echo' => true,
+            	        'echo' => false,
                         'fallback_cb' => 'wp_page_menu',
                         'before' => '',
                         'after' => '',
@@ -39,7 +39,8 @@ require_once(dirname(__FILE__) . '/class/class-load.php');
                         'item_spacing' => 'preserve',
             	        'depth' => 0,
                         'walker' => '',
-                        'theme_location' => '' ));
+                        'theme_location' => '' ))
+                    );
                     ?>
                 </div>
             </nav>
