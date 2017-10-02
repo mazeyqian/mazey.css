@@ -14,7 +14,6 @@ require_once(dirname(__FILE__) . '/class/class-load.php');
         </style>
     </head>
     <body>
-        <!--div>页码：<?php echo $Object_Show->current_page; ?></div-->
         <header>
             <!--导航-->
             <nav class="navbar navbar-static-top navbar-default">
@@ -22,11 +21,26 @@ require_once(dirname(__FILE__) . '/class/class-load.php');
                     <div class="navbar-header">
                         <a class="navbar-brand" href="<?php bloginfo('url'); ?>"><mip-img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="治白发网" ></a>
                     </div>
-                    <ul class="nav navbar-nav hidden-xs">
-                        <li class="active"><a href="<?php bloginfo('url'); ?>">首页</a></li>
-                        <li class=""><a href="#">关于我们</a></li>
-                        <li class=""><a href="#">联系我们</a></li>
-                    </ul>
+                    <?php
+                    wp_nav_menu(array(
+                        'menu' => '',
+                        'container' => '',
+                        'container_class' => '',
+                        'container_id' => '',
+                        'menu_class' => 'nav navbar-nav hidden-xs',
+                        'menu_id' => '',
+            	        'echo' => true,
+                        'fallback_cb' => 'wp_page_menu',
+                        'before' => '',
+                        'after' => '',
+                        'link_before' => '',
+                        'link_after' => '',
+                        'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                        'item_spacing' => 'preserve',
+            	        'depth' => 0,
+                        'walker' => '',
+                        'theme_location' => '' ));
+                    ?>
                 </div>
             </nav>
         </header>
