@@ -6,5 +6,6 @@
             </div>
         </footer>
         <script src="/static/v1/mip.js"></script>
+        <script src="https://mipcache.bdstatic.com/static/v1.2/mip-form.js"></script>
     </body>
 </html>
