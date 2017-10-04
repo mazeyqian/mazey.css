@@ -23,6 +23,18 @@ class Class_Show {
         echo $this->return_page_title();
     }
 
+    /* 文章标题链接 */
+    /* public function print_post_title_link() {
+        the_post();
+        echo '<a href="';
+        the_permalink();
+        echo '" title="';
+        the_title();
+        echo '" target="_blank">';
+        the_title();
+        echo '</a>';
+    } */
+
     /* 文章标签 */
     /* private function return_post_detail() {
         $detail = 'unknown';
