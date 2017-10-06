@@ -33,6 +33,7 @@ class Class_Show {
         echo '" target="_blank">';
         the_title();
         echo '</a>';
+
     } */
 
     /* 文章标签 */
