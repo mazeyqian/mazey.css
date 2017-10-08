@@ -24,8 +24,8 @@ class Class_Show {
     }
 
     /* 文章标题链接 */
-    /* public function print_post_title_link() {
-        the_post();
+    public function print_post_title_link() {
+        //the_post();
         echo '<a href="';
         the_permalink();
         echo '" title="';
@@ -33,7 +33,9 @@ class Class_Show {
         echo '" target="_blank">';
         the_title();
         echo '</a>';
-
+    }
+    /* public function print_post_title_link() {
+        echo 'link';
     } */
 
     /* 文章标签 */

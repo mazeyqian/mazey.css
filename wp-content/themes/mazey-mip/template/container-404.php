@@ -16,7 +16,7 @@
                         ?>
                         <div class="col-md-4">
                             <p>
-                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                                <?php global $Object_Show;$Object_Show->print_post_title_link(); ?>
                             </p>
                             <p class="post-single-time">
                                 <?php the_time('Y年m月d日');?>

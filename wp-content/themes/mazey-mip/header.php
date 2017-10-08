@@ -1,14 +1,12 @@
-<?php
-require_once(dirname(__FILE__) . '/class/class-load.php');
-?>
+<?php require_once(dirname(__FILE__) . '/class/class-load.php'); ?>
 <!DOCTYPE html>
 <html mip>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
         <link rel="stylesheet" type="text/css" href="/static/v1/mip.css">
-        <link rel="canonical" href="<?php $Object_MIP->print_current_url(); ?>">
-        <title><?php $Object_Show->print_page_title(); ?></title>
+        <link rel="canonical" href="<?php global $Object_MIP;$Object_MIP->print_current_url(); ?>">
+        <title><?php global $Object_Show;$Object_Show->print_page_title(); ?></title>
         <style mip-custom>
             <?php require_once(dirname(__FILE__) . '/css/main.css.php'); ?>
         </style>

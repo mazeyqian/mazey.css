@@ -5,7 +5,7 @@
                     ?>
                     <article class="post-index">
                         <header>
-                            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                            <h2><?php global $Object_Show;$Object_Show->print_post_title_link(); ?></h2>
                             <p class="post-index-detail">时间：<?php the_time('Y年m月d日');?> / 作者：<?php the_author(); ?> / 分类：<?php the_category(', '); ?></p>
                         </header>
                         <div>

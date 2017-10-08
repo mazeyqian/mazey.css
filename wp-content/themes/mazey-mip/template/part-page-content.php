@@ -5,7 +5,7 @@
                     ?>
                     <article class="post-index">
                         <header>
-                            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                            <h2><?php global $Object_Show;$Object_Show->print_post_title_link(); ?></h2>
                         </header>
                         <div>
                             <p><?php the_content(); ?></p>
