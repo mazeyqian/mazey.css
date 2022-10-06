@@ -1,46 +1,31 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# Output folders
+node_modules/
+dist/
+test/unit/coverage
+test/e2e/reports
 
-# compiled output
-# /dist
-/tmp
-/out-tsc
+# Cache folders
+.sass-cache/
+undefined/
+temp/
 
-# dependencies
-/node_modules
-/server/node_modules
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
 
-# IDEs and editors
-/.idea
-/server/.idea
-.project
-.buildpath
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-testem.log
-/typings
-yarn-error.log
-
-# e2e
-/e2e/*.js
-/e2e/*.map
-
-# System Files
+# System files
 .DS_Store
-Thumbs.db
+
+# Local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+selenium-debug.log*
