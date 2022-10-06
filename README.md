@@ -1,0 +1,3 @@
+# mazey-style
+
+Mazey Style
