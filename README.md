@@ -3,5 +3,5 @@
 Mazey Style
 
 ```
-//i.mazey.net/mazey-style/lib/confluence.css
+<link type="text/css" href="//i.mazey.net/mazey-style/lib/confluence.css" rel="stylesheet" />
 ```
