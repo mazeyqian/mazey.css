@@ -20,14 +20,18 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          "style-loader",
+          // https://webpack.js.org/loaders/style-loader/#recommend
+          // Do not use together style-loader and mini-css-extract-plugin.
+          // "style-loader",
+          // https://stackoverflow.com/questions/52571793/error-in-using-the-webpack-mini-css-extract-plugin-plugin
           // mini-css-extract-plugin's loader only takes the output of css-loader as its input. 
           {
             loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: 'css-loader',
-            options: { modules: true },
+            // https://segmentfault.com/q/1010000009000432/a-1020000009000931
+            // options: { modules: true },
           },
           {
             loader: "sass-loader",
@@ -49,7 +53,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: path.resolve(__dirname, `lib/${ENTRY}.html`),
-      template: path.resolve(__dirname, 'src/template/index.html'),
+      template: path.resolve(__dirname, 'src/z-template/index.html'),
       inject: true,
       chunksSortMode: 'auto'
     }),

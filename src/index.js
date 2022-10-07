@@ -1,3 +1,3 @@
-import './index.scss';
+import './z-style/index.scss';
 
-console.log('Hello');
+console.log('index');

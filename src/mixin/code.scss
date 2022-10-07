@@ -1,0 +1,43 @@
+@mixin code {
+  code, kbd, pre, samp, tt, var {
+    font-family: monospace, monospace;
+    font-size: 1em
+  }
+
+  pre {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    overflow: auto;
+    font-size: .875em;
+
+    white-space: pre-wrap;
+    word-break: break-all;
+    background: #eee;
+    color: #626262;
+
+    // line-height: 1.6;
+    // max-width: 100%;
+
+    // padding: 8px;
+
+    code {
+      font-size: inherit;
+      color: inherit;
+      word-break: normal;
+    }
+  }
+
+  code {
+    // font-size: 87.5%;
+    font-size: .875em;
+    color: #e83e8c;
+    word-break: break-word
+  }
+
+  a {
+    code {
+      color: inherit
+    }
+  }
+}
