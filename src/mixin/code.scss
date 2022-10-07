@@ -5,21 +5,23 @@
   }
 
   pre {
+    // main
     display: block;
-    margin-top: 0;
-    margin-bottom: 1rem;
+    // margin-top: 0;
+    // margin-bottom: 1rem;
     overflow: auto;
-    font-size: .875em;
+    // font-size: .875em;
 
+    // extra
     white-space: pre-wrap;
     word-break: break-all;
     background: #eee;
     color: #626262;
 
-    // line-height: 1.6;
-    // max-width: 100%;
-
-    // padding: 8px;
+    // beauty
+    line-height: 1.6;
+    max-width: 100%;
+    padding: 20px;
 
     code {
       font-size: inherit;
@@ -30,7 +32,7 @@
 
   code {
     // font-size: 87.5%;
-    font-size: .875em;
+    // font-size: 1em;
     color: #e83e8c;
     word-break: break-word
   }
