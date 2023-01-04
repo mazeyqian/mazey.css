@@ -2,11 +2,11 @@
     cursor: pointer;
 }
 
-%m-show{
+%m-show {
     display: block;
 }
 
-%m-hide{
+%m-hide {
     display: none;
 }
 
@@ -26,30 +26,32 @@
     align-items: center;
 }
 
-%m-ellipsis{
+%m-ellipsis {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-%m-wrap{
+%m-wrap {
     word-break: break-all;
     word-wrap: break-word;
 }
 
-%m-table{
+%m-table {
     width: 100%;
     //border: 1px solid #E4EBEE;
     background: 0 0;
     font-size: 12px;
     border-collapse: collapse;
-    %unity{
+
+    %unity {
         text-align: left;
         padding: 10px 15px;
     }
-    >thead{
-        >tr{
-            >th{
+
+    >thead {
+        >tr {
+            >th {
                 @extend %unity;
                 color: #242a30;
                 font-weight: 600;
@@ -57,41 +59,49 @@
             }
         }
     }
-    >tbody{
-        >tr{
-            >td{
+
+    >tbody {
+        >tr {
+            >td {
                 @extend %unity;
                 color: #707478;
                 border-top: 1px solid #dee2e6;
             }
         }
     }
+
     // 斑马线
-    &.table-striped tbody tr{
+    &.table-striped tbody tr {
         &:nth-of-type(odd) {
-            background-color: rgba(0,0,0,.05);
+            background-color: rgba(0, 0, 0, .05);
         }
-        >td{
+
+        >td {
             border-top-width: 0;
         }
     }
+
     // 悬浮变色
-    &.table-hover tbody tr{
-        &:hover{
-            background-color: rgba(0,0,0,.05);
+    &.table-hover tbody tr {
+        &:hover {
+            background-color: rgba(0, 0, 0, .05);
         }
     }
+
     // 有框
-    &.table-bordered{
+    &.table-bordered {
+
         th,
-        td{
+        td {
             border: 1px solid #dee2e6;
         }
     }
+
     // 排序
-    .m-table-is-sort{
+    .m-table-is-sort {
         @extend %m-pointer;
-        .m-table-sort{
+
+        .m-table-sort {
             display: inline-flex;
             flex-direction: column;
             align-items: center;
@@ -101,23 +111,28 @@
             cursor: pointer;
             overflow: initial;
             position: relative;
-            >i{
+
+            >i {
                 width: 0;
                 height: 0;
                 border: 5px solid transparent;
                 position: absolute;
                 left: 7px;
-                &.sort-ascend{
+
+                &.sort-ascend {
                     border-bottom-color: #c0c4cc;
                     top: 5px;
-                    &.active{
+
+                    &.active {
                         border-bottom-color: #409EFF;
                     }
                 }
-                &.sort-descend{
+
+                &.sort-descend {
                     border-top-color: #c0c4cc;
                     bottom: 7px;
-                    &.active{
+
+                    &.active {
                         border-top-color: #409EFF;
                     }
                 }
@@ -126,24 +141,27 @@
     }
 }
 
-%m-scroll-bar{
+%m-scroll-bar {
     overflow-y: auto;
+
     /*滚动条的宽度*/
-    &::-webkit-scrollbar{
+    &::-webkit-scrollbar {
         width: 6px;
     }
+
     /* 滚动条的滑轨背景颜色 */
     &::-webkit-scrollbar-track {
         background-color: transparent; // red;
         -webkit-border-radius: 2em;
         -moz-border-radius: 2em;
-        border-radius:2em;
+        border-radius: 2em;
     }
+
     /* 滑块颜色 */
     &::-webkit-scrollbar-thumb {
-        background-color:darken(#EEEEEE, 10%); // green;
+        background-color: darken(#EEEEEE, 10%); // green;
         -webkit-border-radius: 2em;
         -moz-border-radius: 2em;
-        border-radius:2em;
+        border-radius: 2em;
     }
 }
