@@ -3,4 +3,8 @@
 
 .wiki-content {
   @include code;
+
+  td.confluenceTd>a {
+    display: flex;
+  }
 }
