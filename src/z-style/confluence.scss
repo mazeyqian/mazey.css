@@ -4,7 +4,17 @@
 .wiki-content {
   @include code;
 
-  td.confluenceTd>a {
-    display: flex;
+  &>br {
+    display: none;
+  }
+
+  td.confluenceTd {
+    &>a {
+      display: inline-flex;
+    }
+
+    &>br:nth-last-of-type(1) {
+      display: none;
+    }
   }
 }
