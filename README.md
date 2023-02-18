@@ -5,7 +5,7 @@ Confluence is a popular document tool for companies. But the support for Markdow
 ## Install
 
 ```
-git clone https://github.com/mazeyqian/mazey.css.git mazey-style
+git clone https://github.com/mazeyqian/mazey.css.git style
 ```
 
 ## Usage
