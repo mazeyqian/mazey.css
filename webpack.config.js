@@ -9,7 +9,7 @@ console.log(`ENTRY: ${ENTRY}`);
 module.exports = {
   mode: 'production',
   entry: {
-    [ENTRY]: `./src/${ENTRY}.js`
+    [ENTRY]: `./src/z-temporary/${ENTRY}.js`
   },
   output: {
     filename: '[name].js',
