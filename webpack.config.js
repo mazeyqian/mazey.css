@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const ENTRY = process.env.ENTRY;
@@ -57,8 +57,8 @@ module.exports = {
       inject: true,
       chunksSortMode: 'auto'
     }),
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ['lib'],
-    }),
+    // new CleanWebpackPlugin({
+    //   cleanOnceBeforeBuildPatterns: ['./*.js'],
+    // }),
   ],
 };
