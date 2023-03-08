@@ -1,4 +1,4 @@
-import './z-style/confluence.scss';
+import '../z-style/confluence.scss';
 
 console.log('confluence');
 
