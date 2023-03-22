@@ -11,5 +11,5 @@ git clone https://github.com/mazeyqian/mazey.css.git style
 ## Usage
 
 ```
-<link type="text/css" href="//i.mazey.net/mazey-style/lib/confluence.css" rel="stylesheet" />
+<link type="text/css" href="//i.mazey.net/style/lib/confluence.css" rel="stylesheet" />
 ```
