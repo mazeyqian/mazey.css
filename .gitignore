@@ -32,3 +32,13 @@ selenium-debug.log*
 
 # Version
 package-lock.json
+
+# Secret folders&files
+*.secret/
+*.secret.conf
+*.secret.ini
+*.secret.js
+*.secret.css
+*.secret.html
+*.secret.scss
+*.secret.sh
