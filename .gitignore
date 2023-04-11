@@ -8,6 +8,9 @@ test/e2e/reports
 .sass-cache/
 undefined/
 temp/
+lib/*.js
+lib/*.html
+!lib/confluence.js
 
 # Editor directories and files
 .idea

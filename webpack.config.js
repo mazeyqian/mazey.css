@@ -58,7 +58,7 @@ module.exports = {
       chunksSortMode: 'auto'
     }),
     // new CleanWebpackPlugin({
-    //   cleanOnceBeforeBuildPatterns: ['./*.js'],
+    //   cleanAfterEveryBuildPatterns: ['./*.js', './*.html'],
     // }),
   ],
 };
