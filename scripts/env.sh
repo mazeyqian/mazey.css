@@ -1,2 +1,2 @@
 # Node Version
-nvm use 12.22.12
+nvm use 14.21.3
