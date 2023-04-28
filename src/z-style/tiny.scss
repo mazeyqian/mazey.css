@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import "tiny-normalize";
+@import "../variate/index.scss";
 
 // 在父元素字体大小为 16px 的容器内绘制图形交互
 $TinyBoxSize: 16px;
@@ -122,6 +123,32 @@ $TinyBoxSize: 16px;
     a {
       text-decoration: underline;
       color: #111111;
+    }
+
+    &.is-backup {
+      span {
+        font-size: pxToEm(13);
+      }
+
+      button {
+        margin: 0;
+        color: $color-black;
+        background: $bgc-silver;
+        border-color: $bgc-silver;
+        padding: pxToEm(0) pxToEm(5);
+        margin-left: pxToEm(8);
+        font-size: pxToEm(12);
+
+        &:hover {
+          background: $bgc-silver;
+          border-color: $bgc-silver;
+        }
+      }
+
+      .copied {
+        font-size: pxToEm(12);
+        margin-left: pxToEm(8);
+      }
     }
   }
 }
