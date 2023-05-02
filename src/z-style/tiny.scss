@@ -150,5 +150,17 @@ $TinyBoxSize: 16px;
         margin-left: pxToEm(8);
       }
     }
+
+    &.is-qr {
+      padding: 0; // pxToEm(12);
+
+      .qr-code {
+        display: flex;
+      }
+
+      canvas {
+        margin: pxToEm(12);
+      }
+    }
   }
 }
