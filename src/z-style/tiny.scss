@@ -48,6 +48,7 @@ $TinyColorSub: #40a9ff;
     white-space: nowrap;
     padding: pxToEm(3) pxToEm(15);
     border-radius: pxToEm(2);
+    user-select: none;
 
     &:hover {
       background: $TinyColorSub;
@@ -138,13 +139,18 @@ $TinyColorSub: #40a9ff;
         font-size: pxToEm(13);
       }
 
+      a {
+        margin-right: pxToEm(8);
+      }
+
       button {
         margin: 0;
         color: $color-black;
         background: $bgc-silver;
         border-color: $bgc-silver;
         padding: pxToEm(0) pxToEm(5);
-        margin-left: pxToEm(8);
+        // margin-left: pxToEm(8);
+        margin-right: pxToEm(8);
         font-size: pxToEm(12);
 
         &:hover {
@@ -155,7 +161,7 @@ $TinyColorSub: #40a9ff;
 
       .copied {
         font-size: pxToEm(12);
-        margin-left: pxToEm(8);
+        // margin-left: pxToEm(8);
       }
     }
 
@@ -167,7 +173,7 @@ $TinyColorSub: #40a9ff;
       }
 
       canvas {
-        margin: pxToEm(12);
+        margin: pxToEm(12) pxToEm(12) pxToEm(12) pxToEm(18);
       }
     }
   }
@@ -177,6 +183,10 @@ $TinyColorSub: #40a9ff;
     $smallPercent: 0.6;
 
     padding: calc($TinyPadding * $smallPercent);
+
+    .result-show {
+      margin-top: calc($TinyPadding * $smallPercent);
+    }
 
     .generated-result {
       margin-top: calc($TinyPaddingSmall * $smallPercent);
