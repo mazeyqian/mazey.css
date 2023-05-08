@@ -26,3 +26,13 @@ $bgc-white: #FFFFFF;
 $bgc-gray: #AAAAAA;
 $bgc-silver: #DDDDDD;
 $bgc-black: #111111;
+
+// Breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);

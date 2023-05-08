@@ -3,19 +3,27 @@
 @import "../variate/index.scss";
 
 // 在父元素字体大小为 16px 的容器内绘制图形交互
-$TinyBoxSize: 16px;
+// Methods
 @function pxToEm ($px) {
-  @return calc($px / 16) * 1em;
+  @return calc($px / $TinyBoxLen) * 1em;
 }
+// Variates
+$TinyBoxLen: 16;
+$TinyBoxSize: $TinyBoxLen + px;
+$TinyPadding: pxToEm(20);
+$TinyPaddingSmall: pxToEm(8);
+$TinyWidthSmall: map-get($grid-breakpoints, sm);
+$TinyColorPrimary: #1890ff;
+$TinyColorSub: #40a9ff;
 
 .tiny-box {
   width: 100%;
   font-weight: 400;
-  font-family: Arial;
+  font-family: 'PingFang SC', 'Microsoft YaHei', 'Droid Sans Fallback', Arial, Helvetica, tahoma, sans-serif;
   font-size: $TinyBoxSize; // 16px;
   box-sizing: border-box;
   color: #111111;
-  padding: pxToEm(20); // 20px;
+  padding: $TinyPadding; // 20px;
 
   div, input {
     box-sizing: border-box;
@@ -30,8 +38,8 @@ $TinyBoxSize: 16px;
     font-weight: 400;
     text-align: center;
     color: #fff;
-    background: #1890ff;
-    border-color: #1890ff;
+    background: $TinyColorPrimary;
+    border-color: $TinyColorPrimary;
     box-shadow: 0 pxToEm(2) 0 rgba(0, 0, 0, 0.045);
     text-shadow: 0 pxToEm(-1) 0 rgba(0, 0, 0, 0.12);
     outline: 0;
@@ -42,8 +50,8 @@ $TinyBoxSize: 16px;
     border-radius: pxToEm(2);
 
     &:hover {
-      background: #40a9ff;
-      border-color: #40a9ff;
+      background: $TinyColorSub;
+      border-color: $TinyColorSub;
     }
   }
 
@@ -62,7 +70,7 @@ $TinyBoxSize: 16px;
     width: pxToEm(200);
 
     &:focus {
-      border-color: #40a9ff;
+      border-color: $TinyColorSub;
       outline: 0;
       box-shadow: 0 0 0 pxToEm(2) rgba(24, 144, 255, 0.2);
     }
@@ -84,7 +92,7 @@ $TinyBoxSize: 16px;
     border-radius: pxToEm(2);
     color: rgba(0, 0, 0, 0.85);
     border: pxToEm(1) solid #f0f0f0;
-    margin-top: pxToEm(20);
+    margin-top: $TinyPadding;
     display: flex;
     flex-wrap: wrap;
 
@@ -109,7 +117,7 @@ $TinyBoxSize: 16px;
   .generated-result {
     @extend .result-show;
 
-    margin-top: pxToEm(8);
+    margin-top: $TinyPaddingSmall;
     align-items: center;
     padding-bottom: pxToEm(24);
 
@@ -161,6 +169,17 @@ $TinyBoxSize: 16px;
       canvas {
         margin: pxToEm(12);
       }
+    }
+  }
+
+  // Use Medium Query
+  @media (max-width: $TinyWidthSmall) {
+    $smallPercent: 0.6;
+
+    padding: calc($TinyPadding * $smallPercent);
+
+    .generated-result {
+      margin-top: calc($TinyPaddingSmall * $smallPercent);
     }
   }
 }
