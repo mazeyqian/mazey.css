@@ -13,3 +13,9 @@ git clone https://github.com/mazeyqian/mazey.css.git style
 ```
 <link type="text/css" href="//i.mazey.net/style/lib/confluence.css" rel="stylesheet" />
 ```
+
+## Update
+
+```
+cd /web/i.mazey.net/style && git pull
+```
