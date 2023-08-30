@@ -60,7 +60,6 @@ $TinyColorSub: #40a9ff;
     margin: 0;
     font-variant: tabular-nums;
     list-style: none;
-    min-width: pxToEm(200);
     padding: pxToEm(4) pxToEm(11);
     color: rgba(0, 0, 0, 0.85);
     background-color: #fff;
@@ -68,7 +67,8 @@ $TinyColorSub: #40a9ff;
     border: pxToEm(1) solid #d9d9d9;
     border-radius: pxToEm(2);
     transition: all 0.3s;
-    width: pxToEm(200);
+    min-width: pxToEm(200 * 1.12);
+    width: pxToEm(200 * 1.12);
 
     &:focus {
       border-color: $TinyColorSub;
