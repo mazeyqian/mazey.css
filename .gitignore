@@ -8,9 +8,6 @@ test/e2e/reports
 .sass-cache/
 undefined/
 temp/
-lib/*.js
-lib/*.html
-!lib/confluence.js
 
 # Editor directories and files
 .idea
@@ -45,3 +42,10 @@ package-lock.json
 *.secret.html
 *.secret.scss
 *.secret.sh
+
+# Other Files
+
+lib/*.txt
+lib/*.html
+lib/*.js
+!lib/confluence.js
