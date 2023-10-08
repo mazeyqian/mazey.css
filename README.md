@@ -4,18 +4,12 @@ Confluence is a popular document tool for companies. But the support for Markdow
 
 ## Install
 
-```
+```shell
 git clone https://github.com/mazeyqian/mazey.css.git style
 ```
 
 ## Usage
 
-```
+```html
 <link type="text/css" href="//i.mazey.net/style/lib/confluence.css" rel="stylesheet" />
-```
-
-## Update
-
-```
-cd /web/i.mazey.net/style && git pull
 ```
