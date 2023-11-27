@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mazeyqian/mazey-style.git"
+    "url": "git+https://github.com/mazeyqian/mazey.css.git"
   },
   "author": "Cheng",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mazeyqian/mazey-style/issues"
+    "url": "https://github.com/mazeyqian/mazey.css/issues"
   },
-  "homepage": "https://github.com/mazeyqian/mazey-style#readme",
+  "homepage": "https://github.com/mazeyqian/mazey.css#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
     "cross-env": "^7.0.3",
