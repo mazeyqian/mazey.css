@@ -1,1 +1,2 @@
-cd /web/i.mazey.net/style && git pull
+git checkout main
+git pull
