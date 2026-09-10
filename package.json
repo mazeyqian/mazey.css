@@ -1,6 +1,6 @@
 {
   "name": "mazey.css",
-  "version": "1.7.0",
+  "version": "1.7.2",
   "description": "Reusable CSS and Sass styles for normalized pages, layouts, links, and Confluence content.",
   "main": "lib/index.css",
   "exports": {

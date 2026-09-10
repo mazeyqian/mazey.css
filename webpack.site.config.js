@@ -76,6 +76,10 @@ const runtimeConfig = {
 
 module.exports = {
   mode: "development",
+  experiments: {
+    // HtmlWebpackPlugin owns template rendering and HTML minification.
+    html: false,
+  },
   entry: {
     shared: path.resolve(__dirname, "site/shared.ts"),
     home: {
