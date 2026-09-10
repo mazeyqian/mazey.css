@@ -1,8 +1,15 @@
 {
   "name": "mazey.css",
-  "version": "1.5.4",
-  "description": "Mazey Style",
+  "version": "1.6.2",
+  "description": "Reusable CSS and Sass styles for normalized pages, layouts, links, and Confluence content.",
   "main": "lib/index.css",
+  "files": [
+    "lib/*.css",
+    "lib/confluence.js",
+    "src/**/*.scss",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "nvm:use": "nvm use 22",
     "build:index": "cross-env ENTRY=index webpack --config webpack.config.js",
@@ -10,9 +17,21 @@
     "build:link": "cross-env ENTRY=link webpack --config webpack.config.js",
     "watch:link": "cross-env ENTRY=link webpack --config webpack.config.js --watch",
     "build:base": "cross-env ENTRY=base webpack --config webpack.config.js",
-    "build:blogbase": "cross-env ENTRY=blogbase webpack",
-    "test": "echo 'Ready to write and run tests?' && exit 0",
-    "build": "echo 'Building project...' && exit 0"
+    "build:blogbase": "cross-env ENTRY=blogbase webpack --config webpack.config.js",
+    "build": "npm run build:index && npm run build:base && npm run build:link && npm run build:confluence && npm run build:blogbase && npm run package:validate",
+    "build:site": "cross-env GITHUB_PAGES=true webpack --mode production --config webpack.site.config.js",
+    "build:dev": "webpack --mode development --config webpack.site.config.js",
+    "dev": "webpack serve --mode development --config webpack.site.config.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint project.config.js webpack.site.config.js scripts site examples test",
+    "test": "node --test test/*.test.js",
+    "docs": "npm run build:site && node scripts/build-pages.js && npm run seo:validate && npm run pwa:validate",
+    "seo:validate": "node scripts/validate-seo.js",
+    "pwa:validate": "node scripts/validate-pwa.js",
+    "package:validate": "node scripts/validate-package.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "preview": "npm run typecheck && npm run lint && npm run build && npm test && npm run docs && npm run format:check"
   },
   "repository": {
     "type": "git",
@@ -35,19 +54,32 @@
   "bugs": {
     "url": "https://github.com/chengchuu/mazey.css/issues"
   },
-  "homepage": "https://github.com/chengchuu/mazey.css#readme",
+  "homepage": "https://chengchuu.github.io/mazey.css/",
+  "engines": {
+    "node": ">=22"
+  },
   "devDependencies": {
-    "clean-webpack-plugin": "^4.0.0",
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "bootstrap": "^5.3.8",
     "cross-env": "^7.0.3",
-    "css-loader": "^6.7.1",
-    "html-webpack-plugin": "^5.5.0",
-    "mazey": "^5.6.2",
-    "mini-css-extract-plugin": "^2.6.1",
+    "css-loader": "^7.1.4",
+    "eslint": "^10.0.0",
+    "globals": "^17.0.0",
+    "html-webpack-plugin": "^5.6.7",
+    "mazey": "^5.6.0",
+    "mini-css-extract-plugin": "^2.10.2",
+    "prettier": "^3.9.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "sass": "^1.58.3",
     "sass-loader": "^13.3.3",
-    "sass-migrator": "^2.5.7",
-    "style-loader": "^3.3.1",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "ts-loader": "^9.5.0",
+    "typescript": "^6.0.0",
+    "typescript-eslint": "^8.63.0",
+    "webpack": "^5.108.0",
+    "webpack-cli": "^7.0.0",
+    "webpack-dev-server": "^6.0.0"
   }
 }

@@ -1,0 +1,9 @@
+coverage/
+dist-dev/
+docs/
+lib/
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+src/
+webpack.config.js

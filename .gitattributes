@@ -1,2 +1,7 @@
+examples/** linguist-detectable=false
+lib/** linguist-detectable=false
+scripts/** linguist-detectable=false
+site/** linguist-detectable=false
+test/** linguist-detectable=false
 *.sh text eol=lf
 *.bash text eol=lf

@@ -1,0 +1,19 @@
+.playground-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 22rem) minmax(0, 1fr);
+}
+
+.preview-frame {
+  width: 100%;
+  min-height: 32rem;
+  background: white;
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius-lg);
+}
+
+@media (max-width: 767.98px) {
+  .playground-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= ROOT_TITLE %></title>
+    <meta name="description" content="<%= ROOT_DESCRIPTION %>" />
+    <link rel="canonical" href="<%= SITE_URL %>" />
+    <link rel="icon" href="<%= FAVICON_URL %>" type="image/png" />
+    <% if (MANIFEST_URL) { %>
+    <link rel="manifest" href="<%= MANIFEST_URL %>" />
+    <% } %>
+    <meta
+      name="theme-color"
+      content="<%= THEME_COLOR_PRIMARY %>"
+      data-theme-color
+      data-theme-color-light="<%= THEME_COLOR_LIGHT %>"
+      data-theme-color-dark="<%= THEME_COLOR_DARK %>"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="<%= PACKAGE_NAME %>" />
+    <meta property="og:title" content="<%= ROOT_TITLE %>" />
+    <meta property="og:description" content="<%= ROOT_DESCRIPTION %>" />
+    <meta property="og:url" content="<%= SITE_URL %>" />
+    <meta property="og:image" content="<%= OPEN_GRAPH_IMAGE_URL %>" />
+    <meta property="og:image:type" content="<%= OPEN_GRAPH_IMAGE_TYPE %>" />
+    <meta property="og:image:width" content="<%= OPEN_GRAPH_IMAGE_WIDTH %>" />
+    <meta property="og:image:height" content="<%= OPEN_GRAPH_IMAGE_HEIGHT %>" />
+    <meta property="og:image:alt" content="<%= OPEN_GRAPH_IMAGE_ALT %>" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="<%= ROOT_TITLE %>" />
+    <meta name="twitter:description" content="<%= ROOT_DESCRIPTION %>" />
+    <meta name="twitter:image" content="<%= OPEN_GRAPH_IMAGE_URL %>" />
+    <script type="application/ld+json">
+      <%= ROOT_JSON_LD %>
+    </script>
+  </head>
+  <body class="d-flex flex-column">
+    <a class="btn btn-primary skip-link" href="#main-content"
+      >Skip to content</a
+    >
+    <header class="sticky-top">
+      <nav
+        class="navbar navbar-expand-lg site-navbar border-bottom"
+        aria-label="Primary navigation"
+      >
+        <div class="container">
+          <a
+            class="navbar-brand d-flex align-items-center gap-2"
+            href="<%= HOME_PATH %>"
+            ><img class="site-logo" src="<%= LOGO_URL %>" alt="" /><strong
+              ><%= PACKAGE_NAME %></strong
+            ></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#primary-nav"
+            aria-controls="primary-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="primary-nav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="<%= HOME_PATH %>"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= PLAYGROUND_PATH %>">Playground</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#install">Install</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#usage">Usage</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= API_PATH %>">API</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= GITHUB_URL %>">GitHub</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= NPM_URL %>">npm</a>
+              </li>
+              <li class="nav-item ms-lg-2">
+                <label class="visually-hidden" for="theme-home">Theme</label
+                ><select
+                  id="theme-home"
+                  class="form-select form-select-sm"
+                  data-theme-select
+                >
+                  <option value="system">System</option>
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                </select>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main id="main-content">
+      <section class="hero">
+        <div class="container hero-copy text-center">
+          <img
+            src="<%= LOGO_URL %>"
+            width="96"
+            height="96"
+            alt="mazey.css logo"
+            class="mb-4"
+          />
+          <h1 class="display-3 fw-bold">Reusable CSS and Sass styles</h1>
+          <p class="lead text-body-secondary mt-3">
+            Normalize browser defaults and opt into focused layout, link, blog,
+            or Confluence styles without adding a JavaScript runtime dependency.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
+            <a class="btn btn-primary btn-lg" href="#install"
+              >Install mazey.css</a
+            ><a
+              class="btn btn-outline-primary btn-lg"
+              href="<%= PLAYGROUND_PATH %>"
+              >Open playground</a
+            ><button
+              class="btn btn-outline-secondary btn-lg"
+              type="button"
+              data-pwa-install
+              hidden
+            >
+              Install website
+            </button>
+          </div>
+          <span
+            class="visually-hidden"
+            role="status"
+            aria-live="polite"
+            data-pwa-status
+          ></span>
+        </div>
+      </section>
+      <section
+        id="install"
+        class="container py-5 section-anchor"
+        aria-labelledby="install-title"
+      >
+        <h2 id="install-title">Install</h2>
+        <p>
+          Install the package from npm. The package root resolves to the
+          normalization stylesheet.
+        </p>
+        <pre class="code-block"><code><%= INSTALL_COMMAND %></code></pre>
+      </section>
+      <section
+        id="usage"
+        class="container py-5 section-anchor"
+        aria-labelledby="usage-title"
+      >
+        <h2 id="usage-title">Usage</h2>
+        <p>
+          Import the package root for normalized browser defaults. Named
+          stylesheet files are available when a project needs their additional
+          selectors.
+        </p>
+        <pre class="code-block"><code>import "mazey.css";
+import "mazey.css/lib/base.css";</code></pre>
+        <div class="row g-4 mt-1">
+          <% for (const stylesheet of STYLESHEETS) { %>
+          <div class="col-md-6 col-xl-4">
+            <article class="card bundle-card">
+              <div class="card-body">
+                <h3 class="h5"><code><%= stylesheet.name %></code></h3>
+                <p><%= stylesheet.description %></p>
+                <code><%= stylesheet.importPath %></code>
+              </div>
+            </article>
+          </div>
+          <% } %>
+        </div>
+      </section>
+      <section class="container py-5" aria-labelledby="reference-title">
+        <h2 id="reference-title">Explore the package</h2>
+        <p>
+          The playground renders the built public stylesheets in an isolated
+          preview. The API reference documents the available entry points and
+          stable selectors supported by current source.
+        </p>
+        <div class="d-flex flex-wrap gap-2">
+          <a class="btn btn-primary" href="<%= PLAYGROUND_PATH %>"
+            >Try the playground</a
+          ><a class="btn btn-outline-primary" href="<%= API_PATH %>"
+            >Read the stylesheet API</a
+          >
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer py-4">
+      <div class="container d-flex flex-wrap justify-content-between gap-2">
+        <span>© <span data-current-year></span> <%= PACKAGE_NAME %></span
+        ><a href="<%= LICENSE_URL %>">GPL-2.0 license</a>
+      </div>
+    </footer>
+    <aside
+      class="alert alert-info pwa-update"
+      data-pwa-update
+      hidden
+      aria-label="Website update"
+    >
+      <span>A new website version is available.</span>
+      <button
+        class="btn btn-sm btn-primary ms-2"
+        type="button"
+        data-pwa-update-now
+      >
+        Update now
+      </button>
+    </aside>
+  </body>
+</html>

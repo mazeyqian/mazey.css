@@ -37,4 +37,8 @@ body {
 
 .site-footer {
   background: var(--color-bgbs-nav);
+
+  .bottom-bar {
+    border-top: 1px solid var(--color-bgbs-form);
+  }
 }

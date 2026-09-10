@@ -1,134 +1,87 @@
 <!-- omit from toc -->
+
 # mazey.css
 
 [![npm version][npm-image]][npm-url]
-[![l][l-image]][l-url]
+[![license][license-image]][license-url]
+
+Reusable CSS and Sass styles for normalized pages, responsive layouts, links, and Confluence content.
+
+- [Website](https://chengchuu.github.io/mazey.css/)
+- [Playground](https://chengchuu.github.io/mazey.css/playground/)
+- [Stylesheet API reference](https://chengchuu.github.io/mazey.css/api/)
 
 [npm-image]: https://img.shields.io/npm/v/mazey.css
-[npm-url]: https://npmjs.org/package/mazey.css
-[l-image]: https://img.shields.io/npm/l/mazey.css
-[l-url]: https://github.com/chengchuu/mazey.css
-
-- [Install](#install)
-- [Basic Usage](#basic-usage)
-- [webpack Configuration](#webpack-configuration)
-- [Vue CLI Configuration](#vue-cli-configuration)
-  - [Confluence](#confluence)
-- [Contributing](#contributing)
-  - [Development Setup](#development-setup)
-  - [Development Environment](#development-environment)
-  - [Operation Steps](#operation-steps)
-- [License](#license)
+[npm-url]: https://www.npmjs.com/package/mazey.css
+[license-image]: https://img.shields.io/npm/l/mazey.css
+[license-url]: https://github.com/chengchuu/mazey.css/blob/main/LICENSE
 
 ## Install
 
-Use mazey.css via [npm](https://www.npmjs.com/package/mazey.css).
-
 ```bash
-npm install mazey.css --save
+npm install mazey.css
 ```
 
-Of course, you can also download this file and serve it yourself. The file locates at the `lib/index.css`.
+## Usage
 
-## Basic Usage
+Import the package root to apply normalized browser defaults:
 
-```javascript
-import 'mazey.css';
+```js
+import "mazey.css";
 ```
 
-## webpack Configuration
+Additional compiled stylesheets are available as explicit package paths:
 
-`webpack.config.js`:
-
-```javascript
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-          {
-            loader: 'sass-resources-loader',
-            options: {
-              resources: 'mazey.css/src/extend/index.scss',
-            },
-          },
-        ],
-      },
-    ],
-  },
-};
+```js
+import "mazey.css/lib/base.css";
+import "mazey.css/lib/blogbase.css";
+import "mazey.css/lib/link.css";
+import "mazey.css/lib/confluence.css";
 ```
 
-`webpack-example.scss`:
+| Entry                          | Purpose                                              |
+| ------------------------------ | ---------------------------------------------------- |
+| `mazey.css`                    | Package-root normalization stylesheet                |
+| `mazey.css/lib/base.css`       | Responsive base layout and semantic status variants  |
+| `mazey.css/lib/blogbase.css`   | Blog color variables, header, footer, and dark theme |
+| `mazey.css/lib/link.css`       | Compact link-list and `tiny-box` presentation        |
+| `mazey.css/lib/confluence.css` | Confluence-oriented document styles                  |
+
+The package also publishes its Sass source. For example:
 
 ```scss
-.foo {
-  @extend %m-flex-center;
-}
-```
+@use "mazey.css/src/extend/base";
 
-## Vue CLI Configuration
-
-`vue.config.js`:
-
-```javascript
-module.exports = defineConfig({
-  css: {
-    loaderOptions: {
-      sass: {
-        additionalData: `@import 'mazey.css/src/extend/index.scss';`,
-      },
-    },
-  },
-});
-```
-
-`vue-cli-example.scss`:
-
-```scss
-.foo {
+.example {
   @extend %m-flex-center;
 }
 ```
 
 ### Confluence
 
-Confluence is a popular document tool for companies. But the support for Markdown is inferior. For example, it can't display the style of the table and code. Therefore, the project will supply the effect of it.
+Apply `lib/confluence.css` to pages containing `.wiki-content` or `.entry-content`. The optional
+`lib/confluence.js` enhancement expects jQuery to be available on the page; the stylesheet itself
+does not require JavaScript.
 
-```html
-<link type="text/css" href="//example.com/style/lib/confluence.css" rel="stylesheet" />
-```
-
-## Contributing
-
-### Development Setup
+## Development
 
 ```bash
-docker compose up -d --build
-
-docker compose up -d
-
-docker compose down
+pnpm install
+npm run typecheck
+npm run lint
+npm test
+npm run build
+npm run docs
+npm run format:check
 ```
 
-### Development Environment
+`npm run build` regenerates the current package artifacts under `lib/`. `npm run docs` builds the
+homepage, playground, stylesheet API reference, manifest, service worker, crawler files, and final
+GitHub Pages artifact under `docs/`.
 
-| Dependency | Version  |
-|------------|----------|
-| Node.js    | v22.22.2 |
-
-### Operation Steps
-
-1. Create a new JavaScript file in the `z-temporary` folder, such as `z-temporary/<name>.js`.
-2. Create a new SCSS file in the `src/z-style` folder, such as `src/z-style/_<name>.scss`.
-3. Create a new command in the `package.json` file, such as `"build:<name>": "cross-env ENTRY=<name> webpack --config webpack.config.js"`.
-4. Run the command, such as `npm run build:<name>`, the output file will be in the `lib` folder.
-5. Use the output file in the `lib` folder, such as `import 'mazey.css/lib/<name>.css';`.
+The Pages workflow deploys pushes to `main` and `release/v*`. The npm workflow publishes only from
+`release/v*` after the full validation pipeline passes.
 
 ## License
 
-This software is released under the terms of the [GPL-2.0 license](https://github.com/chengchuu/mazey.css/blob/main/LICENSE).
+This software is released under the terms of the [GPL-2.0 license][license-url].

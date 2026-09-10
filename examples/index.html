@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= PLAYGROUND_TITLE %></title>
+    <meta name="description" content="<%= PLAYGROUND_DESCRIPTION %>" />
+    <link rel="canonical" href="<%= PLAYGROUND_URL %>" />
+    <link rel="icon" href="<%= FAVICON_URL %>" type="image/png" />
+    <% if (MANIFEST_URL) { %>
+    <link rel="manifest" href="<%= MANIFEST_URL %>" />
+    <% } %>
+    <meta
+      name="theme-color"
+      content="<%= THEME_COLOR_PRIMARY %>"
+      data-theme-color
+      data-theme-color-light="<%= THEME_COLOR_LIGHT %>"
+      data-theme-color-dark="<%= THEME_COLOR_DARK %>"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="<%= PACKAGE_NAME %>" />
+    <meta property="og:title" content="<%= PLAYGROUND_TITLE %>" />
+    <meta property="og:description" content="<%= PLAYGROUND_DESCRIPTION %>" />
+    <meta property="og:url" content="<%= PLAYGROUND_URL %>" />
+    <meta property="og:image" content="<%= OPEN_GRAPH_IMAGE_URL %>" />
+    <meta property="og:image:alt" content="<%= OPEN_GRAPH_IMAGE_ALT %>" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="<%= PLAYGROUND_TITLE %>" />
+    <meta name="twitter:description" content="<%= PLAYGROUND_DESCRIPTION %>" />
+    <script type="application/ld+json">
+      <%= PLAYGROUND_JSON_LD %>
+    </script>
+  </head>
+  <body class="d-flex flex-column">
+    <a class="btn btn-primary skip-link" href="#main-content"
+      >Skip to content</a
+    >
+    <header>
+      <nav
+        class="navbar navbar-expand-lg site-navbar border-bottom"
+        aria-label="Primary navigation"
+      >
+        <div class="container">
+          <a
+            class="navbar-brand d-flex align-items-center gap-2"
+            href="<%= HOME_PATH %>"
+            ><img class="site-logo" src="<%= LOGO_URL %>" alt="" /><strong
+              ><%= PACKAGE_NAME %></strong
+            ></a
+          ><button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#playground-nav"
+            aria-controls="playground-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="playground-nav">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+              <li class="nav-item">
+                <a class="nav-link" href="<%= HOME_PATH %>">Home</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="<%= PLAYGROUND_PATH %>"
+                  >Playground</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= API_PATH %>">API</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= GITHUB_URL %>">GitHub</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= NPM_URL %>">npm</a>
+              </li>
+              <li class="nav-item ms-lg-2">
+                <label class="visually-hidden" for="theme-playground"
+                  >Theme</label
+                ><select
+                  id="theme-playground"
+                  class="form-select form-select-sm"
+                  data-theme-select
+                >
+                  <option value="system">System</option>
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                </select>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main id="main-content" class="container py-5 flex-grow-1">
+      <h1>Preview the published stylesheets</h1>
+      <p class="lead text-body-secondary">
+        Choose a public bundle and sample document. The preview loads the built
+        CSS file in an isolated frame, so Bootstrap does not alter the result.
+      </p>
+      <noscript
+        ><div class="alert alert-warning">
+          JavaScript is required to load and switch the interactive stylesheet
+          previews. Installation and API details remain available from the
+          linked pages.
+        </div></noscript
+      >
+      <button
+        class="btn btn-outline-secondary mb-4"
+        type="button"
+        data-pwa-install
+        hidden
+      >
+        Install website
+      </button>
+      <div id="playground-root"></div>
+    </main>
+    <footer class="site-footer py-4">
+      <div class="container d-flex flex-wrap justify-content-between gap-2">
+        <a href="<%= HOME_PATH %>">Project home</a
+        ><a href="<%= API_PATH %>">API reference</a
+        ><a href="<%= GITHUB_URL %>">GitHub repository</a
+        ><a href="<%= NPM_URL %>">npm package</a>
+      </div>
+    </footer>
+    <aside
+      class="alert alert-info pwa-update"
+      data-pwa-update
+      hidden
+      aria-label="Website update"
+    >
+      <span>A new website version is available.</span>
+      <button
+        class="btn btn-sm btn-primary ms-2"
+        type="button"
+        data-pwa-update-now
+      >
+        Update now
+      </button>
+    </aside>
+    <span
+      class="visually-hidden"
+      role="status"
+      aria-live="polite"
+      data-pwa-status
+    ></span>
+  </body>
+</html>

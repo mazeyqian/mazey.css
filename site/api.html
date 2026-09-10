@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= API_TITLE %></title>
+    <meta name="description" content="<%= API_DESCRIPTION %>" />
+    <link rel="canonical" href="<%= API_URL %>" />
+    <link rel="icon" href="<%= FAVICON_URL %>" type="image/png" />
+    <% if (MANIFEST_URL) { %>
+    <link rel="manifest" href="<%= MANIFEST_URL %>" />
+    <% } %>
+    <meta
+      name="theme-color"
+      content="<%= THEME_COLOR_PRIMARY %>"
+      data-theme-color
+      data-theme-color-light="<%= THEME_COLOR_LIGHT %>"
+      data-theme-color-dark="<%= THEME_COLOR_DARK %>"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="<%= PACKAGE_NAME %>" />
+    <meta property="og:title" content="<%= API_TITLE %>" />
+    <meta property="og:description" content="<%= API_DESCRIPTION %>" />
+    <meta property="og:url" content="<%= API_URL %>" />
+    <meta property="og:image" content="<%= OPEN_GRAPH_IMAGE_URL %>" />
+    <meta property="og:image:alt" content="<%= OPEN_GRAPH_IMAGE_ALT %>" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="<%= API_TITLE %>" />
+    <meta name="twitter:description" content="<%= API_DESCRIPTION %>" />
+    <script type="application/ld+json">
+      <%= API_JSON_LD %>
+    </script>
+  </head>
+  <body class="d-flex flex-column">
+    <a class="btn btn-primary skip-link" href="#main-content"
+      >Skip to content</a
+    >
+    <header>
+      <nav
+        class="navbar navbar-expand-lg site-navbar border-bottom"
+        aria-label="Primary navigation"
+      >
+        <div class="container">
+          <a
+            class="navbar-brand d-flex align-items-center gap-2"
+            href="<%= HOME_PATH %>"
+            ><img class="site-logo" src="<%= LOGO_URL %>" alt="" /><strong
+              ><%= PACKAGE_NAME %></strong
+            ></a
+          ><button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#api-nav"
+            aria-controls="api-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="api-nav">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+              <li class="nav-item">
+                <a class="nav-link" href="<%= HOME_PATH %>">Project home</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="<%= API_PATH %>"
+                  >API overview</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= PLAYGROUND_PATH %>">Playground</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= GITHUB_URL %>"
+                  >GitHub repository</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= NPM_URL %>">npm package</a>
+              </li>
+              <li class="nav-item ms-lg-2">
+                <label class="visually-hidden" for="theme-api">Theme</label
+                ><select
+                  id="theme-api"
+                  class="form-select form-select-sm"
+                  data-theme-select
+                >
+                  <option value="system">System</option>
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                </select>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main id="main-content" class="container py-5 flex-grow-1">
+      <h1>Stylesheet API reference</h1>
+      <p class="lead text-body-secondary">
+        The package API is CSS and Sass. These entry points are generated from
+        repository source and published without a JavaScript runtime API.
+      </p>
+      <section class="mt-5" aria-labelledby="entrypoints-title">
+        <h2 id="entrypoints-title">Public stylesheet entry points</h2>
+        <div class="table-responsive">
+          <table class="table align-middle">
+            <thead>
+              <tr>
+                <th scope="col">Entry</th>
+                <th scope="col">Import</th>
+                <th scope="col">Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (const stylesheet of STYLESHEETS) { %>
+              <tr>
+                <th scope="row"><code><%= stylesheet.name %></code></th>
+                <td><code><%= stylesheet.importPath %></code></td>
+                <td><%= stylesheet.description %></td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="mt-5" aria-labelledby="selectors-title">
+        <h2 id="selectors-title">Documented selectors</h2>
+        <dl class="row">
+          <dt class="col-md-3"><code>.base</code></dt>
+          <dd class="col-md-9">
+            Responsive centered layout from <code>base.css</code>.
+          </dd>
+          <dt class="col-md-3"><code>.base-accent</code></dt>
+          <dd class="col-md-9">
+            Accent heading treatment. Status borders are available through
+            <code>.base-success</code>, <code>.base-warn</code>,
+            <code>.base-error</code>, <code>.base-info</code>, and
+            <code>.base-purple</code>.
+          </dd>
+          <dt class="col-md-3"><code>.tiny-box</code></dt>
+          <dd class="col-md-9">
+            Container for compact link-generation controls from
+            <code>link.css</code>.
+          </dd>
+          <dt class="col-md-3">
+            <code>.site-header</code>, <code>.site-footer</code>
+          </dt>
+          <dd class="col-md-9">
+            Blog chrome using color variables from <code>blogbase.css</code>.
+            Set <code>data-theme="dark"</code> on an ancestor for its dark
+            variables.
+          </dd>
+          <dt class="col-md-3">
+            <code>.wiki-content</code>, <code>.entry-content</code>
+          </dt>
+          <dd class="col-md-9">
+            Confluence document scopes from <code>confluence.css</code>.
+          </dd>
+        </dl>
+      </section>
+      <section class="mt-5" aria-labelledby="sass-title">
+        <h2 id="sass-title">Sass source modules</h2>
+        <p>
+          The published <code>src/</code> directory includes mixins, functions,
+          variables, and extension modules for Sass composition. Import only the
+          module a project needs; compiled stylesheet entry points remain the
+          simplest stable integration.
+        </p>
+        <pre
+          class="code-block"
+        ><code>@use "mazey.css/src/extend/base";</code></pre>
+      </section>
+      <section class="mt-5" aria-labelledby="javascript-title">
+        <h2 id="javascript-title">Confluence enhancement script</h2>
+        <p>
+          <code>lib/confluence.js</code> is the package's only current
+          JavaScript artifact. It enhances matching Confluence content when
+          jQuery is already available; the stylesheet bundles do not require it.
+        </p>
+      </section>
+    </main>
+    <footer class="site-footer py-4">
+      <div class="container d-flex flex-wrap justify-content-between gap-2">
+        <span>© <span data-current-year></span> <%= PACKAGE_NAME %></span
+        ><a href="<%= LICENSE_URL %>">GPL-2.0 license</a>
+      </div>
+    </footer>
+    <aside
+      class="alert alert-info pwa-update"
+      data-pwa-update
+      hidden
+      aria-label="Website update"
+    >
+      <span>A new website version is available.</span>
+      <button
+        class="btn btn-sm btn-primary ms-2"
+        type="button"
+        data-pwa-update-now
+      >
+        Update now
+      </button>
+    </aside>
+    <span
+      class="visually-hidden"
+      role="status"
+      aria-live="polite"
+      data-pwa-status
+    ></span>
+  </body>
+</html>
