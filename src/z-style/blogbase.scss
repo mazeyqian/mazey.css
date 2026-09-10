@@ -1,5 +1,5 @@
-@use "../function/index" as function;
-@use "../mixin/theme";
+@use "../../sass/function/index" as function;
+@use "../../sass/mixin/theme";
 
 $color-content: #626262;
 $color-white: #ffffff;

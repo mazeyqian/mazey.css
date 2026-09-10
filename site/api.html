@@ -164,16 +164,44 @@
         </dl>
       </section>
       <section class="mt-5" aria-labelledby="sass-title">
-        <h2 id="sass-title">Sass source modules</h2>
+        <h2 id="sass-title">Sass utility modules</h2>
         <p>
-          The published <code>src/</code> directory includes mixins, functions,
-          variables, and extension modules for Sass composition. Import only the
-          module a project needs; compiled stylesheet entry points remain the
-          simplest stable integration.
+          The published <code>sass/</code> directory contains extension,
+          function, mixin, and variable modules. Use Dart Sass 1.71 or later
+          with the Node package importer. Compiled stylesheet entry points
+          remain the simplest integration when a project does not need Sass
+          members.
         </p>
+        <ul>
+          <li>
+            <code>pkg:mazey.css/extend/&lt;module&gt;</code> provides
+            placeholders for <code>@extend</code>.
+          </li>
+          <li>
+            <code>pkg:mazey.css/function/&lt;module&gt;</code> provides Sass
+            functions.
+          </li>
+          <li>
+            <code>pkg:mazey.css/mixin/&lt;module&gt;</code> provides Sass
+            mixins.
+          </li>
+          <li>
+            <code>pkg:mazey.css/variate/&lt;module&gt;</code> provides variables
+            and maps.
+          </li>
+        </ul>
         <pre
           class="code-block"
-        ><code>@use "mazey.css/src/extend/base";</code></pre>
+        ><code>@use "pkg:mazey.css/extend/base";</code></pre>
+        <p>Enable package resolution in the Sass CLI:</p>
+        <pre
+          class="code-block"
+        ><code>sass --pkg-importer=node input.scss output.css</code></pre>
+        <p>
+          JavaScript API users configure
+          <code>new sass.NodePackageImporter()</code> in the
+          <code>importers</code> array.
+        </p>
       </section>
       <section class="mt-5" aria-labelledby="javascript-title">
         <h2 id="javascript-title">Confluence enhancement script</h2>

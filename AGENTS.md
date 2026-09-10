@@ -16,7 +16,8 @@ tag, or rewrite history unless the user explicitly requests it.
   `index.scss`, `base.scss`, `blogbase.scss`, `link.scss`, and `confluence.scss`.
 - `src/z-temporary/`: package Webpack entry shims. The Confluence entry also emits the optional
   jQuery enhancement; the other entries import only their matching Sass source.
-- `src/mixin/`, `src/extend/`, `src/function/`, and `src/variate/`: published Sass modules.
+- `sass/extend/`, `sass/function/`, `sass/mixin/`, and `sass/variate/`: published Sass utility
+  modules and their only maintained source tree.
 - `webpack.config.js`: package stylesheet build selected by `ENTRY`; it emits committed `lib`
   artifacts. Do not edit `lib` by hand.
 - `project.config.js`: central package, URL, route, SEO, theme, PWA, and stylesheet-reference data.
@@ -43,14 +44,16 @@ published legacy files without current source/build entries. Treat them as compa
 do not regenerate or delete them without first establishing whether consumers still import them.
 
 Keep entry names synchronized across `src/z-style`, `src/z-temporary`, package scripts,
-`project.config.js`, README usage, and `lib`. Preserve published selectors and Sass members unless a
-task explicitly changes them. Website-only dependencies belong in `devDependencies`; package
-validation rejects runtime dependencies.
+`project.config.js`, README usage, and `lib`. Private stylesheet entries import public utilities
+from `sass/` through relative filesystem paths. Preserve published selectors and Sass members
+unless a task explicitly changes them. Website-only dependencies belong in `devDependencies`;
+package validation rejects runtime dependencies.
 
-The package allowlist publishes `lib/*.css`, `lib/confluence.js`, the complete `src` Sass tree,
-`README.md`, and `LICENSE`. This means the two legacy CSS files are also published. Keep package
-entry shims, website sources, scripts, tests, images, configuration, and generated Pages output
-outside the npm tarball.
+The package allowlist publishes `lib/*.css`, `lib/confluence.js`, `sass/**/*.scss`, `README.md`, and
+`LICENSE`. Sass consumers use the package's conditional exports with `pkg:mazey.css/...` URLs, Dart
+Sass 1.71 or later, and the Node package importer. The two legacy CSS files are also published. Keep
+all `src/` files, package entry shims, website sources, scripts, tests, images, configuration, and
+generated Pages output outside the npm tarball.
 
 ## Website architecture
 
@@ -92,7 +95,7 @@ npm run docs
 npm run seo:validate
 npm run pwa:validate
 npm run format:check
-npm pack --dry-run
+npm pack --dry-run --json
 ```
 
 `npm run build` rebuilds every current package entry and validates the package artifacts. Review
@@ -100,8 +103,11 @@ the resulting tracked `lib` diff. `npm run docs` builds the production Pages sit
 deterministically, and validates the final SEO/PWA artifact. Do not cite source-template inspection
 as final Pages validation.
 
-For package-boundary changes, inspect the `npm pack --dry-run` manifest. Tests and checks must not
-depend on network access. Do not run `npm publish` or Pages deployment during ordinary validation.
+For package-boundary changes, inspect the JSON pack manifest. The project test creates an isolated
+temporary consumer outside the repository, installs the local tarball without lifecycle scripts or
+network dependencies, and compiles the documented `pkg:` example through `NodePackageImporter`.
+Tests and checks must not depend on network access. Do not run `npm publish` or Pages deployment
+during ordinary validation.
 
 ## Workflows
 

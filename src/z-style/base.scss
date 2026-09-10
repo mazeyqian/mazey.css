@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "sass:meta";
-@use "../variate/index" as variate;
-@use "../function/index" as function;
+@use "../../sass/variate/index" as variate;
+@use "../../sass/function/index" as function;
 
 // --------------------
 // Semantic defaults

@@ -47,15 +47,40 @@ import "mazey.css/lib/confluence.css";
 | `mazey.css/lib/link.css`       | Compact link-list and `tiny-box` presentation        |
 | `mazey.css/lib/confluence.css` | Confluence-oriented document styles                  |
 
-The package also publishes its Sass source. For example:
+The package also publishes utility modules from `sass/`. Use Dart Sass 1.71 or later with the Node
+package importer:
+
+- `pkg:mazey.css/extend/<module>`: placeholders for reuse with `@extend`.
+- `pkg:mazey.css/function/<module>`: Sass functions.
+- `pkg:mazey.css/mixin/<module>`: Sass mixins.
+- `pkg:mazey.css/variate/<module>`: variables and maps.
 
 ```scss
-@use "mazey.css/src/extend/base";
+@use "pkg:mazey.css/extend/base";
 
 .example {
   @extend %m-flex-center;
 }
 ```
+
+Enable package resolution in the Sass CLI:
+
+```bash
+sass --pkg-importer=node input.scss output.css
+```
+
+When using the JavaScript API, configure `NodePackageImporter`:
+
+```js
+import * as sass from "sass";
+
+const result = sass.compile("input.scss", {
+  importers: [new sass.NodePackageImporter()],
+});
+```
+
+Use the compiled CSS imports when you do not need Sass variables, functions, mixins, or
+placeholders.
 
 ### Confluence
 

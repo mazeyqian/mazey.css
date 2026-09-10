@@ -1,12 +1,35 @@
 {
   "name": "mazey.css",
-  "version": "1.6.2",
+  "version": "1.7.0",
   "description": "Reusable CSS and Sass styles for normalized pages, layouts, links, and Confluence content.",
   "main": "lib/index.css",
+  "exports": {
+    ".": {
+      "style": "./lib/index.css",
+      "default": "./lib/index.css"
+    },
+    "./lib/*.css": {
+      "style": "./lib/*.css",
+      "default": "./lib/*.css"
+    },
+    "./lib/confluence.js": "./lib/confluence.js",
+    "./extend/*.scss": {
+      "sass": "./sass/extend/*.scss"
+    },
+    "./function/*.scss": {
+      "sass": "./sass/function/*.scss"
+    },
+    "./mixin/*.scss": {
+      "sass": "./sass/mixin/*.scss"
+    },
+    "./variate/*.scss": {
+      "sass": "./sass/variate/*.scss"
+    }
+  },
   "files": [
     "lib/*.css",
     "lib/confluence.js",
-    "src/**/*.scss",
+    "sass/**/*.scss",
     "README.md",
     "LICENSE"
   ],
@@ -55,9 +78,6 @@
     "url": "https://github.com/chengchuu/mazey.css/issues"
   },
   "homepage": "https://chengchuu.github.io/mazey.css/",
-  "engines": {
-    "node": ">=22"
-  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/react": "^19.2.17",
@@ -68,12 +88,12 @@
     "eslint": "^10.0.0",
     "globals": "^17.0.0",
     "html-webpack-plugin": "^5.6.7",
-    "mazey": "^5.6.0",
+    "mazey": "^5.9.0",
     "mini-css-extract-plugin": "^2.10.2",
     "prettier": "^3.9.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "sass": "^1.58.3",
+    "sass": "^1.71.0",
     "sass-loader": "^13.3.3",
     "ts-loader": "^9.5.0",
     "typescript": "^6.0.0",

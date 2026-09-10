@@ -24,7 +24,7 @@ const pages = {
   api: {
     title: "mazey.css Stylesheet API Reference",
     description:
-      "Reference for the public mazey.css stylesheet entry points, Sass source modules, and documented selectors.",
+      "Reference for the public mazey.css stylesheet entry points, Sass utility modules, and documented selectors.",
     url: new URL("api/", siteUrl).href,
   },
 };
