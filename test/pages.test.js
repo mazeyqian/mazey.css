@@ -4,11 +4,16 @@ const { tmpdir } = require("node:os");
 const path = require("node:path");
 const test = require("node:test");
 const projectConfig = require("../project.config");
+const siteWebpackConfig = require("../webpack.site.config");
 const {
   createManifest,
   fingerprint,
   renderServiceWorker,
 } = require("../scripts/build-pages");
+
+test("HtmlWebpackPlugin remains the only HTML minifier", () => {
+  assert.equal(siteWebpackConfig.experiments.html, false);
+});
 
 test("manifest identity and scope remain project-specific", () => {
   const manifest = createManifest();

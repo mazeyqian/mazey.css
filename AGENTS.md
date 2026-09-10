@@ -24,7 +24,8 @@ tag, or rewrite history unless the user explicitly requests it.
 - `site/`: homepage, API reference, shared theme/PWA behavior, CSS, and service-worker source.
 - `examples/`: React playground that previews generated public stylesheets in a sandboxed frame.
 - `webpack.site.config.js`: website and playground build. Development uses `/`; production uses
-  `/mazey.css/` and enables service-worker registration.
+  `/mazey.css/` and enables service-worker registration. Keep `experiments.html` disabled so
+  HtmlWebpackPlugin remains the only HTML renderer and minifier.
 - `scripts/build-pages.js`: deterministic `dist-dev` to `docs` assembly, manifest/crawler output,
   public stylesheet copying, and service-worker token replacement.
 - `scripts/validate-package.js`, `validate-seo.js`, and `validate-pwa.js`: package and final-artifact
