@@ -1,6 +1,5 @@
 {
   "window.title": "${rootName}${separator}${dirty}${activeEditorShort}${separator}${profileName}${separator}${appName}",
-  "liveServer.settings.port": 5514,
   "markdown.extension.toc.levels": "2..4",
   "files.eol": "\n",
   "files.insertFinalNewline": true,
