@@ -103,7 +103,7 @@ npm pack --dry-run --json
 ```
 
 `npm run dev:link` serves the `link` package entry at `http://127.0.0.1:4132/link.css`. It does not
-replace `npm run dev`, which serves the package website and playground. Run the sibling
+replace `npm run dev:site`, which serves the package website and playground. Run the sibling
 `mazey-polestar` JavaScript server and `pages` HTML server when developing the integrated Link page.
 
 `npm run build` rebuilds every current package entry and validates the package artifacts. Review

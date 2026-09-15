@@ -35,7 +35,7 @@
   ],
   "scripts": {
     "nvm:use": "nvm use 22",
-    "dev": "webpack serve --mode development --config webpack.site.config.js",
+    "dev:site": "webpack serve --mode development --config webpack.site.config.js",
     "dev:link": "cross-env ENTRY=link webpack serve --mode development --config webpack.config.link.dev.js",
     "build:index": "cross-env ENTRY=index webpack --config webpack.config.js",
     "build:confluence": "cross-env ENTRY=confluence webpack --config webpack.config.js",
