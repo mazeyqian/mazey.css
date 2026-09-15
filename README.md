@@ -92,6 +92,7 @@ does not require JavaScript.
 
 ```bash
 pnpm install
+npm run dev:link
 npm run typecheck
 npm run lint
 npm test
@@ -99,6 +100,8 @@ npm run build
 npm run docs
 npm run format:check
 ```
+
+`npm run dev:link` serves `link.css` at <http://127.0.0.1:4132/link.css>. The sibling `pages` project owns the integrated HTML at <http://127.0.0.1:4130/link/>, and the sibling `mazey-polestar` project serves `link.js` on port `4131`. Run all three development servers while working on the Link page, and refresh the HTML page manually after CSS changes.
 
 `npm run build` regenerates the current package artifacts under `lib/`. `npm run docs` builds the
 homepage, playground, stylesheet API reference, manifest, service worker, crawler files, and final
