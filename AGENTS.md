@@ -20,8 +20,8 @@ tag, or rewrite history unless the user explicitly requests it.
   modules and their only maintained source tree.
 - `webpack.config.js`: package stylesheet build selected by `ENTRY`; it emits committed `lib`
   artifacts. Do not edit `lib` by hand.
-- `webpack.config.link.dev.js`: development-only `link.css` server on `127.0.0.1:4132`; the sibling
-  `pages` project consumes it from its integrated Link page.
+- `webpack.config.dev.js`: development-only server for every maintained source-backed package entry
+  on `127.0.0.1:4132`; the sibling `pages` project consumes `link.css` from its integrated Link page.
 - `project.config.js`: central package, URL, route, SEO, theme, PWA, and stylesheet-reference data.
 - `site/`: homepage, API reference, shared theme/PWA behavior, CSS, and service-worker source.
 - `examples/`: React playground that previews generated public stylesheets in a sandboxed frame.
@@ -90,7 +90,8 @@ authoritative lockfile; do not commit `package-lock.json`. GitHub workflows inte
 
 ```bash
 pnpm install
-npm run dev:link
+npm run dev
+npm run dev:site
 npm run typecheck
 npm run lint
 npm test
@@ -102,9 +103,10 @@ npm run format:check
 npm pack --dry-run --json
 ```
 
-`npm run dev:link` serves the `link` package entry at `http://127.0.0.1:4132/link.css`. It does not
-replace `npm run dev:site`, which serves the package website and playground. Run the sibling
-`mazey-polestar` JavaScript server and `pages` HTML server when developing the integrated Link page.
+`npm run dev` compiles and serves every maintained source-backed package entry on `127.0.0.1:4132`.
+It does not replace `npm run dev:site`, which serves the package website and playground. Run the
+sibling `mazey-polestar` JavaScript server and `pages` HTML server when developing the integrated
+Link page. Refresh the consuming page manually after stylesheet changes.
 
 `npm run build` rebuilds every current package entry and validates the package artifacts. Review
 the resulting tracked `lib` diff. `npm run docs` builds the production Pages site, replaces `docs`

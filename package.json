@@ -36,7 +36,7 @@
   "scripts": {
     "nvm:use": "nvm use 22",
     "dev:site": "webpack serve --mode development --config webpack.site.config.js",
-    "dev:link": "cross-env ENTRY=link webpack serve --mode development --config webpack.config.link.dev.js",
+    "dev": "webpack serve --mode development --config webpack.config.dev.js",
     "build:index": "cross-env ENTRY=index webpack --config webpack.config.js",
     "build:confluence": "cross-env ENTRY=confluence webpack --config webpack.config.js",
     "build:link": "cross-env ENTRY=link webpack --config webpack.config.js",
@@ -47,7 +47,7 @@
     "build:site": "cross-env GITHUB_PAGES=true webpack --mode production --config webpack.site.config.js",
     "build:dev": "webpack --mode development --config webpack.site.config.js",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint project.config.js webpack.site.config.js webpack.config.link.dev.js scripts site examples test",
+    "lint": "eslint project.config.js webpack.site.config.js webpack.config.dev.js scripts site examples test",
     "test": "node --test test/*.test.js",
     "docs": "npm run build:site && node scripts/build-pages.js && npm run seo:validate && npm run pwa:validate",
     "seo:validate": "node scripts/validate-seo.js",
